@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 发现游戏的入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f3f5f8;
+      color: #1e2630;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* 开场短句 — 视觉锚点 */
+    .hero-statement {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e3e8ef;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .hero-statement p {
+      font-size: 1.6rem;
+      font-weight: 340;
+      letter-spacing: 0.02em;
+      color: #1c2836;
+    }
+
+    .hero-statement strong {
+      font-weight: 500;
+      color: #1a4d7a;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      margin-bottom: 1.8rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0, 20, 40, 0.04);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 480;
+      margin-bottom: 1rem;
+      color: #1c2b3b;
+      letter-spacing: -0.01em;
+      border-left: 3px solid #7b98b8;
+      padding-left: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.8rem;
+      padding-left: 0.2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .feature-marker {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #7b98b8;
+      border-radius: 2px;
+      margin-top: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .feature-text {
+      font-size: 0.98rem;
+    }
+
+    .faq-mini {
+      margin-top: 0.2rem;
+    }
+
+    .faq-mini dt {
+      font-weight: 490;
+      margin: 1rem 0 0.2rem 0;
+      font-size: 1rem;
+      color: #1f2e3f;
+    }
+
+    .faq-mini dd {
+      margin-left: 0.2rem;
+      font-size: 0.95rem;
+      color: #3f4e5e;
+    }
+
+    .link-sentence {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem 2.2rem;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-bottom: 1.8rem;
+      font-size: 1rem;
+    }
+
+    a {
+      color: #1a4d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd6e4;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0d2f4e;
+      border-bottom-color: #0d2f4e;
+    }
+
+    .closing-note {
+      font-size: 0.95rem;
+      color: #4f5e6d;
+      padding-top: 0.4rem;
+      border-top: 1px solid #dee4ec;
+      margin-top: 0.8rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      .hero-statement p {
+        font-size: 1.3rem;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .link-sentence {
+        padding: 1.2rem 1.2rem;
+      }
+
+      body {
+        padding: 1rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-statement p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开场短句 -->
+  <div class="hero-statement">
+    <p>一个名字，就能说明它做什么——<strong>爱游戏</strong>，为你梳理游戏世界的脉络。</p>
+  </div>
+
+  <!-- 承接段落：从用户识别用途切入 -->
+  <div class="card">
+    <p>当你在地址栏输入 <code>siteapp-i-game.com.cn</code> 时，可能正在寻找一个指向“游戏”的清晰标识。许多网站将自己包装成门户，但真正让人一眼确认方向的，往往是名字本身。<strong>爱游戏</strong> 正是这样一个直白的命名：它不故作高深，也不堆砌术语，而是把“游戏”和“喜爱”放在一起，让访问者立刻知道这个站点的领域与态度。</p>
+    <p>一个网站的价值，很大程度取决于它如何帮助用户快速完成判断。从域名到页面内容，<strong>爱游戏</strong> 的定位始终围绕“游戏信息聚合与索引”，没有多余的干扰。下面我们从几个具体层面，看看它提供了哪些可预期的服务。</p>
+  </div>
+
+  <!-- 特点列表：卡片 + 网格 -->
+  <div class="card">
+    <h2>几个可观察的特点</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <span class="feature-marker"></span>
+        <span class="feature-text"><strong>游戏分类整理</strong> — 按类型、平台、年代等维度梳理游戏信息，便于查找</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-marker"></span>
+        <span class="feature-text"><strong>动态更新</strong> — 收录近期的游戏动态、版本变化或活动资讯</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-marker"></span>
+        <span class="feature-text"><strong>内容索引</strong> — 提供游戏名称、开发商、发行日期等基本索引字段</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-marker"></span>
+        <span class="feature-text"><strong>轻量界面</strong> — 页面结构以信息展示为主，加载负担较小</span>
+      </div>
+    </div>
+    <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #4b5a6a;">以上是基于网站当前可见内容的一般性描述，不构成对具体功能的承诺，实际以网站呈现为准。</p>
+  </div>
+
+  <!-- FAQ 摘要 + 温和场景 -->
+  <div class="card">
+    <h2>你可能想问的</h2>
+    <dl class="faq-mini">
+      <dt>这个网站适合哪类用户？</dt>
+      <dd>对游戏资讯有基础查阅需求的人，例如希望快速确认某款游戏的基本信息、了解近期有哪些新作上线。不面向深度攻略或社区互动。</dd>
+      <dt>内容来源可靠吗？</dt>
+      <dd>网站收录的信息主要来自公开的游戏资料与官方披露，但建议用户结合多方渠道交叉验证，特别是涉及具体数据时。</dd>
+      <dt>是否需要注册？</dt>
+      <dd>就当前页面结构来看，浏览索引内容无需注册，但部分交互功能可能存在登录要求，请以实际页面提示为准。</dd>
+    </dl>
+  </div>
+
+  <!-- 自然链接嵌入句子（必须：可见文本严格等于「爱游戏」） -->
+  <div class="link-sentence">
+    <p>如果你正想找一个能快速了解游戏信息的起点，可以试试 <a href="https://siteapp-i-game.com.cn">爱游戏</a>。从名字到内容风格，它都围绕游戏索引展开，没有冗余的包装。当然，任何网站都只是工具，最终判断信息是否适合自己，依然取决于你的具体需求。</p>
+  </div>
+
+  <!-- 温和结尾 -->
+  <div class="card closing-note">
+    <p style="margin-bottom: 0.2rem;">游戏世界庞大而多元，一个清晰的入口能节约不少时间。<strong>爱游戏</strong> 试图扮演这样的角色：不喧哗，只把信息摆好。希望你在使用过程中保持自己的判断，享受探索的乐趣。</p>
+    <p style="font-size: 0.9rem; margin-top: 0.6rem; color: #687a8a;">—— 本页仅作介绍用途，不构成对网站所有内容的背书。</p>
+  </div>
+
+</div>
+</body>
+</html>
