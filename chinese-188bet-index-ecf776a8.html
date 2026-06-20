@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>188bet 使用指南 · 站点知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce6b4 0%, #f7d794 40%, #f5c16a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #2e241b;
+    }
+    .library-card {
+      max-width: 960px;
+      width: 100%;
+      background: #fffcf7;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px -12px rgba(120, 70, 20, 0.35), 0 8px 20px rgba(0,0,0,0.05);
+      padding: 2.8rem 2.5rem 3rem;
+      transition: box-shadow 0.2s;
+    }
+    @media (max-width: 600px) {
+      .library-card {
+        padding: 2rem 1.2rem 2.4rem;
+        border-radius: 28px;
+      }
+    }
+
+    /* 目录感布局 —— 标题引导 + 清晰区块 */
+    .directory-header {
+      margin-bottom: 2.4rem;
+      border-bottom: 2px solid #efdcc7;
+      padding-bottom: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .directory-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #b2632e, #8d4b1f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-right: 1rem;
+    }
+    .directory-header .badge {
+      background: #eedcc9;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #6b4a2b;
+      letter-spacing: 0.3px;
+    }
+
+    /* 说明区 —— 用途速识 */
+    .intro-block {
+      background: #faf3e9;
+      padding: 1.6rem 1.8rem;
+      border-radius: 24px;
+      margin-bottom: 2.2rem;
+    }
+    .intro-block p {
+      font-size: 1.05rem;
+    }
+    .intro-block strong {
+      color: #9c5e2b;
+    }
+
+    /* 特点卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 2.2rem;
+    }
+    .feature-item {
+      background: white;
+      border-radius: 20px;
+      padding: 1.4rem 1.2rem 1.2rem;
+      box-shadow: 0 4px 10px rgba(160, 100, 40, 0.08);
+      border: 1px solid #f0e4d6;
+      transition: transform 0.1s ease, box-shadow 0.15s;
+    }
+    .feature-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(150, 80, 20, 0.1);
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #7a4d28;
+      margin-bottom: 0.5rem;
+      border-left: 4px solid #e3b17b;
+      padding-left: 0.6rem;
+    }
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #3f3228;
+    }
+
+    /* 提示区 + 相关信息区 */
+    .info-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2rem 0 1.6rem;
+    }
+    .tip-box, .related-box {
+      flex: 1 1 200px;
+      background: #f8efe3;
+      border-radius: 24px;
+      padding: 1.4rem 1.6rem 1.6rem;
+    }
+    .tip-box h2, .related-box h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #6d4526;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tip-box ul, .related-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .tip-box li, .related-box li {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .tip-box li::before, .related-box li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #b57940;
+    }
+    .related-box a {
+      color: #8f592b;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed #dbb48b;
+      transition: border 0.2s;
+    }
+    .related-box a:hover {
+      border-bottom: 1px solid #8f592b;
+    }
+
+    /* FAQ 摘要 —— 简洁，无冗余 */
+    .faq-mini {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 1.4rem 1.8rem 1.8rem;
+      margin: 1.2rem 0 1.4rem;
+      border: 1px solid #ecdccb;
+    }
+    .faq-mini h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #674026;
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      margin-bottom: 0.8rem;
+    }
+    .faq-item strong {
+      display: inline-block;
+      color: #7e4f2a;
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+    .faq-item span {
+      color: #3b2d22;
+    }
+
+    /* 嵌入链接的句子 */
+    .sentence-link {
+      background: #f7ede1;
+      padding: 1.2rem 1.6rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      margin: 1.6rem 0 0.2rem;
+      display: inline-block;
+      width: auto;
+    }
+    .sentence-link a {
+      color: #9e5d29;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #e3b17b;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .sentence-link a:hover {
+      background: #ecd0b0;
+      border-bottom-color: #8f592b;
+    }
+
+    .footer-note {
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: #7d6858;
+      border-top: 1px solid #e6d5c2;
+      padding-top: 1.4rem;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2cfba;
+      margin: 1.2rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="library-card">
+
+  <!-- 目录感 header -->
+  <div class="directory-header">
+    <h1>188bet · 知识库</h1>
+    <span class="badge">快速识别 · 用途导航</span>
+  </div>
+
+  <!-- 说明区：用户快速识别网站用途 -->
+  <div class="intro-block">
+    <p><strong>188bet</strong> 是一个综合性体育赛事与娱乐信息平台，提供涵盖足球、篮球、网球等主流项目的实时数据、赛事前瞻及玩法参考。本知识库帮助新访问者快速了解该站点的内容范围与使用方式。</p>
+  </div>
+
+  <!-- 特点卡片（目录式展示）-->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>赛事覆盖</h3>
+      <p>超过30个联赛、杯赛的实时比分、统计数据与历史记录，方便用户追踪关注的对战。</p>
+    </div>
+    <div class="feature-item">
+      <h3>数据面板</h3>
+      <p>直观的指数变化、盘口走势及攻防数据，辅助用户形成独立判断。</p>
+    </div>
+    <div class="feature-item">
+      <h3>信息整合</h3>
+      <p>将赛前情报、伤病名单、天气影响等碎片信息整合为清晰条目，减少搜索成本。</p>
+    </div>
+    <div class="feature-item">
+      <h3>界面语言</h3>
+      <p>全中文操作环境，符合本地用户查阅习惯；同时支持多语言切换。</p>
+    </div>
+  </div>
+
+  <!-- 提示区 + 相关信息区（左右灵活）-->
+  <div class="info-group">
+    <div class="tip-box">
+      <h2>📌 使用提示</h2>
+      <ul>
+        <li>首次浏览可先从「热门赛事」栏目切入，了解数据呈现方式。</li>
+        <li>指数变动频繁，建议结合多个时间节点做横向对比。</li>
+        <li>平台提供玩法说明文档，适合新手查阅基本术语。</li>
+      </ul>
+    </div>
+    <div class="related-box">
+      <h2>📂 相关信息</h2>
+      <ul>
+        <li>站点协议与隐私说明位于页面底部。</li>
+        <li>赛事数据来源为公开接口，更新延迟约1–3分钟。</li>
+        <li>如欲直接访问 <a href="https://chinese-188bet.com">188bet</a>，可点击上方链接。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要（非全部，只取 2 条）-->
+  <div class="faq-mini">
+    <h2>❓ 常见疑问摘要</h2>
+    <div class="faq-item"><strong>Q：</strong><span>是否需要注册才能查看数据？</span><br>大部分基础数据（比分、赛程）无需登录即可浏览；部分深度统计功能需注册账号。</div>
+    <div class="faq-item" style="margin-bottom: 0;"><strong>Q：</strong><span>平台是否提供移动端适配？</span><br>页面采用响应式设计，手机与平板均可正常使用核心功能。</div>
+  </div>
+
+  <!-- 句子中自然嵌入 a 标签（可见文本严格为“188bet”）-->
+  <div class="sentence-link">
+    ⚡ 如果你正在寻找体育数据与赛事参考，<a href="https://chinese-188bet.com">188bet</a> 能提供覆盖多联赛的实时信息与统计工具。
+  </div>
+
+  <!-- 额外的说明性提醒（不夸张）-->
+  <hr>
+  <p style="font-size: 0.95rem; color: #4c3a2c; margin: 0.8rem 0 0;">
+    本页面仅作为用途介绍与指引，所有数据均以 <a href="https://chinese-188bet.com" style="color:#7b4b23; text-decoration: underline; text-underline-offset: 3px;">188bet</a> 实际展示为准。请合理使用，理性参考。
+  </p>
+
+  <div class="footer-note">
+    <span>知识库入口 · 更新于 2025</span>
+  </div>
+</div>
+</body>
+</html>
